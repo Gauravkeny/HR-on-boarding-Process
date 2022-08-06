@@ -1,0 +1,208 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,1464</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Management.Automation</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>TimeSpan2</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OmniPage.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices.RuntimeInformation</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="644,1399" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="602,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening HR Mail Portal...&quot;]" />
+    <ui:RetryScope DisplayName="Retry Scope - Open HR URL" sap:VirtualizedContainerService.HintSize="602,1014" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: HR On-Boarding Process Form – ExcelCult" sap:VirtualizedContainerService.HintSize="560,749" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="dea89651-2064-47a1-b9df-cf72ca4fa718" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Sequence - Removing Restore" sap:VirtualizedContainerService.HintSize="526,533" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="Restore" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ImageFound DisplayName="Image Exists 'msedge.exe Restore'" Found="[Restore]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="ImageFound_2">
+                    <ui:ImageFound.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAA1CAYAAADMFIzKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI2SURBVHhe7ZpNShxRFEbdjUvJQtyEWxCyACcOMxCcOHKSQSZCZiKEIMmkJ4ImYPyJqEn0ySm48mxK86mXWzF8Bz7q7/Yr+rzXt3pQC82UYuHFWHgxFl6MhRdj4cVYeDEWXoyFF2PhxVh4MRZejCx8ffekLb790haWPzlzwQt+FGThlv148KMgCx+7iXM/ChaeGAULT4yChSdGwcITo2DhiVGw8MQoWHhiFCw8MQqlwnsuf9+07dn5aN1rjUK58J39i7by4Xtb/Xg0HG9+Ph2t/Vv2vl21919/jl6bKgrlwntJh2d/ni1tfqx/IQqTrXBWNrDPteWtgzb78Ws4R7t5t3M8nOeXcHxxfXc+xgn4TNQxgUBdPxnAfRmH+jdrs+E4yGptCpP28JBNkBGSot0sbewP2zEhEPVRxzEy4/MxacD41HGMbFoStZzrJ/glUZikpfAlERAiET8G51mRsWJDWD8W+2whrhE+h9So7SdtjBjrJVGYrIezooBWEsL7Fd+H2hAf0uEpwnuh88dZUZj0oRk9lX1kxs88emzUESYGYlIgVi2TAIzdtxS2Udvfl/v0LYbnyUOT/ZQoTCo8VjlfFqH9Qy9ksj9/jrAPMWHIRSKw7f9uQn9fJgXpQUx0XH9uFEqF/+9RsPDEKFh4YhQsPDEKFp4YBQtPjIKFJ0bBwhOjYOGJUbDwxCjIwv0y5+NJf5nTrys/HLykv65scrDwYiy8GAsvxsKLsfBiLLwYCy/Gwktp7RbnsYOtVsNUfwAAAABJRU5ErkJggg==" />
+                    </ui:ImageFound.Image>
+                    <ui:ImageFound.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="6d2712e5-57bb-49cb-9425-dd67f06d89aa" TimeoutMS="3000">
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:ImageFound.Target>
+                  </ui:ImageFound>
+                  <If Condition="[Restore]" DisplayName="Restore Exists?" sap:VirtualizedContainerService.HintSize="484,294" sap2010:WorkflowViewState.IdRef="If_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'restore push button  Close'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click.CursorPosition>
+                          <ui:CursorPosition Position="Center">
+                            <ui:CursorPosition.OffsetX>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetX>
+                            <ui:CursorPosition.OffsetY>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:CursorPosition.OffsetY>
+                          </ui:CursorPosition>
+                        </ui:Click.CursorPosition>
+                        <ui:Click.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a56cca83-c7d7-4ff0-8d1d-e37bfccfd4a8" InformativeScreenshot="a7f0ae9a2e7c547256c387a530241048" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin*' title='Restore pages' /&gt;&lt;ctrl name='Restore pages' role='dialog' /&gt;&lt;ctrl name='Close' role='push button' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:Click.Target>
+                      </ui:Click>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Edge" IconBase64="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" InformativeScreenshot="e7c76d8adf19d030b6b8da37823248db.png" Selector="&lt;html app='msedge.exe' title='HR On-Boarding Process Form – ExcelCult' /&gt;" Url="[in_Config(&quot;HRSiteURL&quot;).ToString]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean">
+          <ui:ImageFound Found="{x:Null}" DisplayName="Image Exists 'msedge.exe HR'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+            <ui:ImageFound.Image>
+              <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+            </ui:ImageFound.Image>
+            <ui:ImageFound.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b8bb9686-a20e-46db-88a1-961c07019b76" Selector="&lt;html app='msedge.exe' title='HR On-Boarding Process Form – ExcelCult' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:ImageFound.Target>
+          </ui:ImageFound>
+        </ActivityFunc>
+      </ui:RetryScope.Condition>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:RetryScope>
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="602,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Opened HR Mail Portal...&quot;]" />
+  </Sequence>
+</Activity>
